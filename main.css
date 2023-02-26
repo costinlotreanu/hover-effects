@@ -1,0 +1,660 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+figure {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* ------------- HEADER --------------------- */
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    color: #f9f871;
+    font-size: 4rem;
+}
+
+header p {
+    margin-top: -0.5em;
+    font-size: 2em;
+    opacity: 0.75;
+}
+
+header p.special {
+    /* color: #389190; */
+    color: #a682a1;
+    font-size: 2.5rem;
+}
+
+/* -------------------- MEDIA CONTAINER -------------------- */
+
+.media {
+    padding-bottom: 1rem;
+    min-width: 450px;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.media__grid {
+    padding-bottom: 1rem;
+    /* border-bottom: 1px solid #8a7896; */
+    border-bottom: 1px solid #5f5367;
+}
+
+.media:last-child .media__grid {
+    border-bottom: none;
+}
+
+.media__title {
+    color: #d5f4ff; 
+    text-align: center;
+}
+
+figcaption {
+    color: white;
+    text-transform: uppercase;
+}
+
+figcaption h3 {
+    margin: 0;
+    font-weight: normal;
+    word-spacing: -7px;
+}
+
+figcaption span {
+    font-weight: bold;
+}
+
+figcaption p {
+    margin-top: 0.25em;
+}
+
+/* -------------------- HOVER EFFECTS -------------------- */
+/* -------------------- SADIE -------------------- */
+
+.sadie__effect {
+    position: relative;
+}
+
+.sadie__caption {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+
+.sadie__title {
+    margin-top: 0em;
+    color: #36393f;
+    transition: transform 250ms, color 250ms;
+}
+
+.sadie__effect:hover .sadie__title {
+    color: white;
+    transform: translateY(-50px);
+}
+
+.sadie__desc {
+    display: inline-block;
+    max-width: 80%;
+    margin-top: 6em;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 250ms, opacity 250ms;
+}
+
+.sadie__effect:hover .sadie__desc {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sadie__gradient {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    transform: translateY(100%);
+    transition: transform 500ms;
+}
+
+.sadie__effect:hover .sadie__gradient {
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(153,167,228,1) 48%, rgba(76,91,177,1) 100%);
+    opacity: 0.5;
+    transform: translateY(0);
+}
+
+/* -------------------- ZOE -------------------- */
+
+.zoe__effect {
+    position: relative;
+}
+
+.zoe__bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(47, 104, 209, 0.3);
+}
+
+.zoe__caption {
+    display: flex;
+    flex-direction: column-reverse;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    transform: translateY(70px);
+    transition: opacity 350ms, transform 350ms; 
+}
+
+.zoe__effect:hover .zoe__caption {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.zoe__desc {
+    margin-bottom: 6em;
+    font-weight: 500;
+    text-align: center;
+}
+
+.zoe__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 1em;
+    background: white;
+    color: #333;
+}
+
+.zoe__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.zoe__item {
+    margin-left: 1em;
+}
+
+.zoe__svg {
+    width: 20px;
+    height: 20px;
+}
+
+.zoe__svg-attach {
+    background: url(/svg/attachment.svg) no-repeat;
+    transform: translateY(70px);
+}
+
+.zoe__effect:hover .zoe__svg-attach {
+    transform: translateY(0);
+    transition: transform 250ms;
+}
+
+.zoe__svg-eye {
+    background: url(/svg/eye.svg) no-repeat;
+    transform: translateY(70px);
+}
+
+.zoe__effect:hover .zoe__svg-eye {
+    transform: translateY(0);
+    transition: transform 250ms 150ms;
+}
+
+.zoe__svg-heart {
+    background: url(/svg/heart.svg) no-repeat;
+    transform: translateY(70px);
+}
+
+.zoe__effect:hover .zoe__svg-heart {
+    transform: translateY(0);
+    transition: transform 250ms 300ms;
+}
+
+/* -------------------- MARLEY -------------------- */
+
+
+.marley__effect {
+    position: relative;
+}
+
+.marley__title {
+    margin-bottom: 1em;
+    opacity: 0;
+}
+
+.marley__effect:hover .marley__title {
+    animation: text-up 250ms 250ms forwards;
+}
+
+.marley__desc {
+    opacity: 0;
+}
+
+.marley__effect:hover .marley__desc {
+    animation: text-down 250ms 500ms forwards;
+}
+
+@keyframes text-up {
+    from {transform:translateY(100%); opacity: 0;}
+    to {transform: translateY(0);  opacity: 1; }
+}
+
+@keyframes text-down {
+    0% {transform:translateY(-100%); opacity: 0;}
+    50% {transform:translateY(-50%); opacity: 0;}
+    100% {transform: translateY(0);  opacity: 1; }
+}
+
+.marley__caption {
+    position: absolute;
+    bottom: 30%;
+    left: 2em;
+}
+
+.marley__line {
+    width: 0;
+    height: 1px;
+    position: absolute;
+    top: 25px;
+    background-color: white;
+    transition: width 250ms;
+}
+
+.marley__effect:hover .marley__line {
+    width: 90%;
+}
+
+/* -------------------- JULIA -------------------- */
+
+.julia__effect {
+    position: relative;
+}
+
+.julia__img {
+    transition: transform 550ms, opacity 550ms;
+}
+
+.julia__effect:hover .julia__img {
+    transform: scale(1.1);
+    opacity: 0.4;
+}
+
+.julia__bg {
+    width: 100%;
+    height: 100%;
+    background-color: #2f3238;
+}
+
+.julia__caption {
+    position: absolute;
+    top: 3em;
+    left: 2em;
+}
+
+.julia__title {
+    margin-bottom: 1em;
+}
+
+.julia__parag {
+    display: inline-block;
+    margin-bottom: 0;
+    padding: 0.5em 0.75em;
+    background-color: whitesmoke;
+    color: #333;
+    text-transform: none;
+    opacity: 0;
+    transform: translate(-100%);
+    transition: transform 250ms, opacity 250ms;
+}
+
+.julia__effect:hover .julia__parag {
+    transform: translate(0);
+    opacity: 1;
+}
+
+.julia__effect:hover .julia__parag2 {
+    transition-delay: 75ms;
+}
+
+.julia__effect:hover .julia__parag3 {
+    transition-delay: 125ms;
+}
+
+/* -------------------- LILY -------------------- */
+
+.lily__effect {
+    position: relative;
+}
+
+.lily__caption {
+    margin: 0 2em 2em;
+    position: absolute;
+    bottom: 0;
+}
+
+.lily__img {
+    width: 120%;
+    margin-left: -20%;
+    transition: transform 200ms ease-in-out,
+                mix-blend-mode 5s ease-in-out;
+    mix-blend-mode:exclusion;
+}
+
+.lily__effect:hover .lily__img {
+    transform: translate(5%);
+    mix-blend-mode: normal;
+}
+
+.lily__title {
+    transform: translateY(30px);
+    transition: transform 250ms;
+}
+
+.lily__effect:hover .lily__title {
+    transform: translateY(0);
+}
+
+.lily__desc {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 250ms, opacity 250ms;
+}
+
+.lily__effect:hover .lily__desc {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* -------------------- HONEY -------------------- */
+
+.honey__effect {
+    position: relative;
+}
+
+.honey__caption {
+    position: absolute;
+    bottom: 2em;
+}
+
+.honey__title::after {
+    content: "NOW";
+    opacity: 0;
+    transition: opacity 250ms;
+}
+
+.honey__effect:hover .honey__title::after {
+    opacity: 1;
+}
+
+.honey__border {
+    width: 100%;
+    height: 10px;
+    background: white;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(10px);
+    transition: transform 250ms;
+}
+
+.honey__effect:hover .honey__border {
+    transform: translateY(0); 
+}
+
+.honey__title {
+    margin: 0 0 1em 2em;
+    transform: translateY(0);
+    transition: transform 250ms;
+}
+
+.honey__effect:hover .honey__title {
+    transform: translateY(30px); 
+}
+
+.honey__bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    transition: opacity 250ms, background-color 250ms;
+    opacity: 0;
+}
+
+.honey__effect:hover .honey__bg {
+    background-color: rgba(153,167,228,1);
+    opacity: 0.3;
+}
+
+/* -------------------- LAYLA -------------------- */
+
+.layla__effect {
+    position: relative;
+}
+
+.layla__img {
+    height: 110%;
+    margin-top: -5%;
+    transition: transform 150ms;
+}
+
+.layla__effect:hover .layla__img {
+    transform: translateY(15px);
+}
+
+.layla__caption {
+    text-align: center;
+    position: absolute;
+    bottom: 30%;
+    z-index: 2;
+}
+
+.layla__title {
+    transform: translateY(-35px);
+    transition: transform 400ms;
+}
+
+.layla__effect:hover .layla__title {
+    transform: translateY(0);
+}
+
+.layla__desc {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 1em;
+    opacity: 0;
+    transition: opacity 450ms;
+}
+
+.layla__effect:hover .layla__desc {
+    opacity: 1;
+}
+
+.layla__bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transition: background-color 250ms;
+}
+
+.layla__effect:hover .layla__bg {
+    background-color: rgb(91, 158, 117);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0.5;
+    transition: background-color 550ms;
+}
+
+.layla__line1::before {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: white;
+    position: absolute;
+    top: 2.5em;
+    left: 2em;
+    transition: width 300ms ease-in;
+}
+
+.layla__effect:hover .layla__line1::before {
+    width: 85%;
+    z-index: 1;
+    transition: width 400ms;
+}
+
+.layla__line1::after {
+    content: '';
+    width: 2px;
+    height: 0;
+    background: white;
+    position: absolute;
+    top: 2em;
+    left: 2.5em;
+    transition: height 300ms ease-in;
+}
+
+.layla__effect:hover .layla__line1::after {
+    height: 85%;
+    z-index: 1;
+}
+
+.layla__line2::before {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: white;
+    position: absolute;
+    bottom: 2em;
+    right: 2.5em;
+    transition: width 300ms ease-in;
+}
+
+.layla__effect:hover .layla__line2::before {
+    width: 85%;
+    z-index: 1;
+    transition: width 400ms;
+}
+
+.layla__line2::after {
+    content: '';
+    width: 2px;
+    height: 0;
+    background: white;
+    position: absolute;
+    bottom: 1.5em;
+    right: 3em;
+    transition: height 300ms ease-in;
+}
+
+.layla__effect:hover .layla__line2::after {
+    height: 85%;
+    z-index: 1;
+}
+
+/* -------------------- GOLI -------------------- */
+
+.goli__effect {
+    position: relative;
+    background-color: rgb(219, 76, 76);
+}
+
+.goli__img {
+    transform: translateY(0);
+    transition: transform 300ms;
+}
+
+.goli__effect:hover .goli__img {
+    transform: translateY(-22%);
+}
+
+.goli__title {
+    transform: translateY(0);
+    transition: transform 255ms;
+}
+
+.goli__effect:hover .goli__title {
+    transform: translateY(-200%);
+}
+
+.goli__caption {
+    position: absolute;
+    bottom: 0;
+    left: 2em;
+}
+
+.goli__desc {
+    font-size: 1.2em;
+    font-weight: 500;
+    text-transform: none;
+    transform: translateY(100%);
+    transition: transform 255ms, opacity 150ms;
+    opacity: 0;
+}
+
+.goli__effect:hover .goli__desc {
+    opacity: 1;
+    transform: translateY(20%);
+}
+
+
+/* ------------- ------------- -------------------- */
+/* ------------- MEDIA QUERIES -------------------- */
+/* ------------- ------------- -------------------- */
+
+@media (min-width: 975px) {
+    figcaption h3 {
+        font-size: 2em;
+    }
+
+    .media {
+        max-width: 1200px;
+    }
+
+    .media__grid {
+        display: grid;
+        grid-template-columns: minmax(450px, 550px) minmax(450px, 550px);
+        place-content: center;
+    }
+
+    /* -------------------- MARLEY -------------------- */
+    .marley__line {
+        top: 50px;
+    }
+
+    /* -------------------- GOLI -------------------- */
+    .goli__effect:hover .goli__desc {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+    
+}
