@@ -50,6 +50,7 @@ header p.special {
 
 .media {
     padding-bottom: 1rem;
+    min-width: 450px;
     max-width: 550px;
     margin: 0 auto;
 }
